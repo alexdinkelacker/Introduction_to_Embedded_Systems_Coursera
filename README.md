@@ -1,9 +1,8 @@
 # Student Author: Alex Dinkelacker
-## University of California, Santa Barbara
-### Electrical and Computer Engineering
-### ***************************************
-## This project is the first assessment of the course. It covers basic C programming and is focused towards a "brush-up" on the students knowledge of C programming.
-### ***************************************
+* University of California, Santa Barbara
+  * Electrical and Computer Engineering
+***************************************
+* This project is the first assessment of the course. It covers basic C programming and is focused towards a "brush-up" on the students knowledge of C programming.
 ### ******************************************************************************
 # Copyright (C) 2017 by Alex Fosdick - University of Colorado
 #

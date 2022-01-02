@@ -128,37 +128,105 @@ float find_minimum(unsigned char *data, unsigned int length);
 void sort_array(unsigned char *data, unsigned int length, char dir); 
 
 
-
 /*----------------------------------------
 --------Function Implementations----------
 ------------------------------------------*/
-void print_statistics(unsigned char *data, unsigned int length){
+void print_statistics(unsigned char *data, unsigned int length, char dir){
+    printf("The min is %0.2f\n", find_minimum(data, length));
+    printf("The max is %0.2f\n", find_maximum(data, length));
+    printf("The mean is %0.2f\n", find_mean(data, length));
+    printf("The median is %0.2f\n", find_median(data, length));
 
 }
 
-void print_array(unsigned char *data, unsigned int length){
 
+void print_array(unsigned char *data, unsigned int length){
+    //Iterate through the array and print out each element
+    for(int i = 0; i < length; i++){
+        if (i < (length-1)) //--------------if you're not at the end then add a comma 
+            printf("%4i, ", *(data+i));
+        else                                //--------------if you're at the end of the array then drop the last comma
+            printf("%4i \n", *(data+i));
+    
+        if (((i+1) % 8 == 0)&&(i != 0))//---for each column of 8 put a \n
+            printf("\n");
+    }
 } 
 
 float find_median(unsigned char *data, unsigned int length){
-
+    //sort_array gets called in main prior to this, so the array will already be sorted
+    //however - one would want to sort first  
+    //if length == odd  -> divide by 2 and round up to get the position of the median number 
+    //if length == even -> divide by 2 and go to that number in that position and average it with the number in                                 the next higher position 
+    float median = 0; 
+    
+    if (length%2 == 0)//even 
+        median = (float)(*(data+length/2-1)+*(data+length/2))/2;
+    
+    //we know the length is even so I will not consider the odd case
+    
+    return median; 
+    
+    
 }
 
 float find_mean(unsigned char *data, unsigned int length){
-
+    float mean = 0; 
+    float sum = 0; 
+    for(int i = 0; i < length; i++)
+        sum = sum + *(data+i); 
+    return mean = sum/length; 
 }
 
 float find_maximum(unsigned char *data, unsigned int length){
- 
+    float max = *data;   
+    for(int i = 1; i < length; i++)
+         if(*(data+i) > max)
+            max = *(data+i); 
+    return max; 
 }
 
 float find_minimum(unsigned char *data, unsigned int length){
- 
+    float min = *data;   
+    for(int i = 1; i < length; i++)
+         if(*(data+i) < min)
+            min = *(data+i); 
+    return min; 
 }
 
 void sort_array(unsigned char *data, unsigned int length, char dir){
-
+    //bubble-sort
+    
+    while(1){
+        int swapped = 0; 
+        
+        for(int i = 0; i < length - 1; i++){
+        
+            if(dir == 'r'){
+                if (*(data+i) < *(data+i+1)){
+                    int temp = *(data+i);
+                    *(data+i) = *(data+i+1);
+                    *(data+i+1) = temp; 
+                    swapped = 1; 
+                }
+            }else{  
+                if (*(data+i) > *(data+i+1)){
+                    int temp = *(data+i);
+                    *(data+i) = *(data+i+1);
+                    *(data+i+1) = temp; 
+                    swapped = 1; 
+                }
+            }
+        }
+        
+        if(swapped == 0){
+            break; 
+        }   
+    }
+    print_array(data, length); 
+    
 }
+
 
 
 /*******************SAVE************************** 

@@ -44,8 +44,17 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
   /* Other Variable Declarations Go Here */
+  char sort_dir = "reverse order";
   /* Statistics and Printing Functions Go Here */
 
+  //Show what the array looks like prior to sorting 
+  printf("Array before sorting is: \n");
+  print_array(&test, SIZE);
+  //Show what the array looks like after sorting 
+  printf("Array after sorting is: \n");
+  sort_array(&test, SIZE, sort_dir);
+  //The array is now sorted --> test = {2, 2, 3, 5, ...
+  print_statistics(&test, SIZE); 
 }
 
 /* Add other Implementation File Code Here */

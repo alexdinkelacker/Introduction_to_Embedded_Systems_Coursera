@@ -1,10 +1,10 @@
-#Student Author: Alex Dinkelacker
-##University of California, Santa Barbara
-###Electrical and Computer Engineering
-###***************************************
-##This project is the first assessment of the course. It covers basic C programming and is focused towards a "brush-up" on the students knowledge of C programming.
-###***************************************
-###******************************************************************************
+# Student Author: Alex Dinkelacker
+## University of California, Santa Barbara
+### Electrical and Computer Engineering
+### ***************************************
+## This project is the first assessment of the course. It covers basic C programming and is focused towards a "brush-up" on the students knowledge of C programming.
+### ***************************************
+### ******************************************************************************
 # Copyright (C) 2017 by Alex Fosdick - University of Colorado
 #
 # Redistribution, modification or use of this software in source or binary
@@ -13,7 +13,7 @@
 # software. Alex Fosdick and the University of Colorado are not liable for any
 # misuse of this material.
 #
-###*****************************************************************************
+### *****************************************************************************
 
 
 ### This is a free access repository for the Coursera Specialization of Embedded
